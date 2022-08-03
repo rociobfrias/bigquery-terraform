@@ -6,7 +6,7 @@ provider "google" {
 
 #Deploy stationary shop dataset
 resource "google_bigquery_dataset" "stationary" {
-  dataset_id                  = google_bigquery_dataset.stationary.dataset_id
+  dataset_id                  = var.stationary
   friendly_name               = "stationary"
   description                 = "Stationary Shop dataset"
   location                    = var.stationary_DS_location #check the location
