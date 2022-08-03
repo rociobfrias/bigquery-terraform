@@ -6,7 +6,7 @@ provider "google" {
 
 #Deploy stationary shop dataset
 resource "google_bigquery_dataset" "stationary" {
-  dataset_id                  = var.stationary
+  dataset_id                  = google_bigquery_dataset.stationary.dataset_id
   friendly_name               = "stationary"
   description                 = "Stationary Shop dataset"
   location                    = var.stationary_DS_location #check the location
@@ -32,7 +32,7 @@ resource "google_bigquery_table" "tbl_notebook" {
 
 # pen table
 resource "google_bigquery_table" "tbl_pen" {
-  dataset_id = var.stationary
+  dataset_id = google_bigquery_dataset.stationary.dataset_id
   table_id = var.tbl_pen
 
   time_partitioning {
