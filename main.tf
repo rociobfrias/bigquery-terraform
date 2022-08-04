@@ -141,12 +141,127 @@ resource "google_bigquery_table" "articles" {
   schema = <<EOF
 [
   {
-    "name": "permalink",
+    "name": "article_id",
+    "type": "INTEGER",
+    "mode": "NULLABLE",
+  },
+  {
+    "name": "product_code",
+    "type": "INTEGER",
+    "mode": "NULLABLE",
+  },
+  {
+    "name": "prod_name",
     "type": "STRING",
     "mode": "NULLABLE",
   },
   {
-    "name": "state",
+    "name": "product_type_no",
+    "type": "INTEGER",
+    "mode": "NULLABLE",
+  },
+  {
+    "name": "product_type_name",
+    "type": "STRING",
+    "mode": "NULLABLE",
+  },
+  {
+    "name": "product_group_name",
+    "type": "STRING",
+    "mode": "NULLABLE",
+  },
+  {
+    "name": "graphical_appearance_no",
+    "type": "INTEGER",
+    "mode": "NULLABLE",
+  },
+  {
+    "name": "graphical_appearance_name",
+    "type": "STRING",
+    "mode": "NULLABLE",
+  },
+  {
+    "name": "colour_group_code",
+    "type": "INTEGER",
+    "mode": "NULLABLE",
+  },
+  {
+    "name": "colour_group_name",
+    "type": "STRING",
+    "mode": "NULLABLE",
+  },
+  {
+    "name": "perceived_colour_value_id",
+    "type": "INTEGER",
+    "mode": "NULLABLE",
+  },
+  {
+    "name": "perceived_colour_value_name",
+    "type": "STRING",
+    "mode": "NULLABLE",
+  },
+  {
+    "name": "perceived_colour_master_id",
+    "type": "INTEGER",
+    "mode": "NULLABLE",
+  },
+  {
+    "name": "perceived_colour_master_name",
+    "type": "STRING",
+    "mode": "NULLABLE",
+  },
+  {
+    "name": "department_no",
+    "type": "INTEGER",
+    "mode": "NULLABLE",
+  },
+  {
+    "name": "department_name",
+    "type": "STRING",
+    "mode": "NULLABLE",
+  },
+  {
+    "name": "index_code",
+    "type": "STRING",
+    "mode": "NULLABLE",
+  },
+  {
+    "name": "index_name",
+    "type": "STRING",
+    "mode": "NULLABLE",
+  },
+  {
+    "name": "index_group_no",
+    "type": "INTEGER",
+    "mode": "NULLABLE",
+  },
+  {
+    "name": "index_group_name",
+    "type": "STRING",
+    "mode": "NULLABLE",
+  },
+  {
+    "name": "section_no",
+    "type": "INTEGER",
+    "mode": "NULLABLE",
+  },
+  {
+    "name": "section_name",
+    "type": "STRING",
+    "mode": "NULLABLE",
+  },
+  {
+    "name": "garment_group_no",
+    "type": "INTEGER",
+    "mode": "NULLABLE",
+  },
+  {
+    "name": "garment_group_name",
+    "type": "STRING",
+    "mode": "NULLABLE",
+  },
+  {
+    "name": "detail_desc",
     "type": "STRING",
     "mode": "NULLABLE",
   }
