@@ -134,7 +134,6 @@ resource "google_bigquery_table" "articles" {
   dataset_id = google_bigquery_dataset.dev_pocdataset.dataset_id
   table_id = var.articles
   
-  
   time_partitioning {
     type = "DAY"
   }
@@ -274,15 +273,57 @@ resource "google_bigquery_table" "customers" {
   dataset_id = google_bigquery_dataset.dev_pocdataset.dataset_id
   table_id = var.customers
   
+  time_partitioning {
+    type = "DAY"
+  }
+  schema = <<EOF
+[
+  {
+    "name": "xx",
+    "type": "xx",
+    "mode": "NULLABLE",
+  },
+]
+EOF
+}
+  
 # transactions_train table
 resource "google_bigquery_table" "transactions_train" {
   dataset_id = google_bigquery_dataset.dev_pocdataset.dataset_id
   table_id = var.transactions_train
   
+  time_partitioning {
+    type = "DAY"
+  }
+  schema = <<EOF
+[
+  {
+    "name": "xx",
+    "type": "xx",
+    "mode": "NULLABLE",
+  },
+]
+EOF
+}
+  
 # zip_code table
 resource "google_bigquery_table" "zip_code" {
   dataset_id = google_bigquery_dataset.dev_pocdataset.dataset_id
   table_id = var.zip_code
+  
+  time_partitioning {
+    type = "DAY"
+  }
+  schema = <<EOF
+[
+  {
+    "name": "xx",
+    "type": "xx",
+    "mode": "NULLABLE",
+  },
+]
+EOF
+}
   
 
 
