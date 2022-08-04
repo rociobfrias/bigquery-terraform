@@ -10,6 +10,7 @@ resource "google_bigquery_dataset" "stationary" {
   friendly_name               = "stationary"
   description                 = "Stationary Shop dataset"
   location                    = var.stationary_DS_location #check the location
+  deletion_protection         = false
  
   #default_table_expiration_ms = 3600000
 
@@ -24,7 +25,7 @@ output "stationary_dataset_id" {
 resource "google_bigquery_table" "tbl_notebook" {
   dataset_id = google_bigquery_dataset.stationary.dataset_id
   table_id = var.tbl_notebook
-  
+  deletion_protection = false
   
   
   time_partitioning {
@@ -52,7 +53,7 @@ EOF
 resource "google_bigquery_table" "tbl_pen" {
   dataset_id = google_bigquery_dataset.stationary.dataset_id
   table_id = var.tbl_pen
-  
+  deletion_protection = false
   
   time_partitioning {
     type = "DAY"
