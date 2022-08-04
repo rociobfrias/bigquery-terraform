@@ -279,10 +279,40 @@ resource "google_bigquery_table" "customers" {
   schema = <<EOF
 [
   {
-    "name": "xx",
-    "type": "xx",
+    "name": "customer_id",
+    "type": "STRING",
     "mode": "NULLABLE",
   },
+  {
+    "name": "FN",
+    "type": "FLOAT",
+    "mode": "NULLABLE",
+  },
+  {
+    "name": "Active",
+    "type": "FLOAT",
+    "mode": "NULLABLE",
+  },
+  {
+    "name": "club_member_status",
+    "type": "STRING",
+    "mode": "NULLABLE",
+  },
+  {
+    "name": "fashion_news_frequency",
+    "type": "STRING",
+    "mode": "NULLABLE",
+  },
+  {
+    "name": "age",
+    "type": "INTEGER",
+    "mode": "NULLABLE",
+  },
+  {
+    "name": "postal_code",
+    "type": "STRING",
+    "mode": "NULLABLE",
+  }
 ]
 EOF
 }
@@ -298,10 +328,30 @@ resource "google_bigquery_table" "transactions_train" {
   schema = <<EOF
 [
   {
-    "name": "xx",
-    "type": "xx",
+    "name": "t_dat",
+    "type": DATE",
     "mode": "NULLABLE",
   },
+  {
+    "name": "customer_id",
+    "type": "STRING",
+    "mode": "NULLABLE",
+  },
+  {
+    "name": "article_id",
+    "type": "INTEGER",
+    "mode": "NULLABLE",
+  },
+  {
+    "name": "price",
+    "type": "FLOAT",
+    "mode": "NULLABLE",
+  },
+  {
+    "name": "sales_channel_id",
+    "type": "INTEGER",
+    "mode": "NULLABLE",
+  }
 ]
 EOF
 }
@@ -317,10 +367,15 @@ resource "google_bigquery_table" "zip_code" {
   schema = <<EOF
 [
   {
-    "name": "xx",
-    "type": "xx",
+    "name": "zip",
+    "type": "INTEGER",
     "mode": "NULLABLE",
   },
+  {
+    "name": "zip_code",
+    "type": "STRING",
+    "mode": "NULLABLE",
+  }
 ]
 EOF
 }
