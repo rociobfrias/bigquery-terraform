@@ -10,7 +10,6 @@ resource "google_bigquery_dataset" "stationary" {
   friendly_name               = "stationary"
   description                 = "Stationary Shop dataset"
   location                    = var.stationary_DS_location #check the location
-  deletion_protection         = false
  
   #default_table_expiration_ms = 3600000
 
