@@ -1,14 +1,29 @@
-variable "tbl_notebook" {
+variable "dev_pocdataset" {
 
 }
 
-variable "tbl_pen" {
+variable "dev_pocdataset_DS_location" {
 
 }
 
-variable "stationary" {
+variable "US_postal_code" {
 
 }
-variable "stationary_DS_location" {
+
+variable "articles" {
 
 }
+
+variable "customers" {
+
+}
+
+variable "transactions_train" {
+
+}
+
+variable "zip_code" {
+
+}
+
+
