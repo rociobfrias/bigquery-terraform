@@ -19,11 +19,35 @@ output "dev_pocdataset_dataset_id" {
   value       = google_bigquery_dataset.dev_pocdataset.dataset_id
 }
 
-# notebook table
-resource "google_bigquery_table" "tbl_notebook" {
-  dataset_id = google_bigquery_dataset.stationary.dataset_id
-  table_id = var.tbl_notebook
-  
+# US_postal_code table
+resource "google_bigquery_table" "US_postal_code" {
+  dataset_id = google_bigquery_dataset.dev_pocdataset.dataset_id
+  table_id = var.US_postal_code
+    
+
+  time_partitioning {
+    type = "DAY"
+  }
+  schema = <<EOF
+[
+  {
+    "name": "permalink",
+    "type": "STRING",
+    "mode": "NULLABLE",
+  },
+  {
+    "name": "state",
+    "type": "STRING",
+    "mode": "NULLABLE",
+  }
+]
+EOF
+}
+
+# articles table
+resource "google_bigquery_table" "articles" {
+  dataset_id = google_bigquery_dataset.dev_pocdataset.dataset_id
+  table_id = var.articles
   
   
   time_partitioning {
@@ -35,45 +59,30 @@ resource "google_bigquery_table" "tbl_notebook" {
     "name": "permalink",
     "type": "STRING",
     "mode": "NULLABLE",
-    "description": "The Permalink"
   },
   {
     "name": "state",
     "type": "STRING",
     "mode": "NULLABLE",
-    "description": "State where the head office is located"
   }
 ]
 EOF
 }
 
-# pen table
-resource "google_bigquery_table" "tbl_pen" {
-  dataset_id = google_bigquery_dataset.stationary.dataset_id
-  table_id = var.tbl_pen
+# customers table
+resource "google_bigquery_table" "customers" {
+  dataset_id = google_bigquery_dataset.dev_pocdataset.dataset_id
+  table_id = var.customers
   
+# transactions_train table
+resource "google_bigquery_table" "transactions_train" {
+  dataset_id = google_bigquery_dataset.dev_pocdataset.dataset_id
+  table_id = var.transactions_train
   
-  time_partitioning {
-    type = "DAY"
-  }
-  schema = <<EOF
-[
-  {
-    "name": "permalink",
-    "type": "STRING",
-    "mode": "NULLABLE",
-    "description": "The Permalink"
-  },
-  {
-    "name": "state",
-    "type": "STRING",
-    "mode": "NULLABLE",
-    "description": "State where the head office is located"
-  }
-]
-EOF
-}
-
-
+# zip_code table
+resource "google_bigquery_table" "zip_code" {
+  dataset_id = google_bigquery_dataset.dev_pocdataset.dataset_id
+  table_id = var.zip_code
+  
 
 
