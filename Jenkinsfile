@@ -23,7 +23,7 @@ pipeline {
         stage('terraform apply') {
             steps{
       
-                   sh 'terraform apply --auto-approve -var="deletion_protection=false"'
+                   sh 'terraform apply --auto-approve'
             }
         }
     }
