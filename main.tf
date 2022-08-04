@@ -23,7 +23,7 @@ output "stationary_dataset_id" {
 resource "google_bigquery_table" "tbl_notebook" {
   dataset_id = google_bigquery_dataset.stationary.dataset_id
   table_id = var.tbl_notebook
-  deletion_protection=false
+  
   
   
   time_partitioning {
