@@ -9,7 +9,7 @@ resource "google_bigquery_dataset" "stationary" {
   dataset_id                  = var.stationary
   friendly_name               = "stationary"
   description                 = "Stationary Shop dataset"
-  location                    = var.stationary_DS_location #check the location
+  location                    = var.dev_pocdataset_DS_location #check the location
  
   #default_table_expiration_ms = 3600000
 
