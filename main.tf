@@ -14,9 +14,9 @@ resource "google_bigquery_dataset" "dev_pocdataset" {
 
 }
 
-output "stationary_dataset_id" {
-  description = "The ID of the dataset "
-  value       = google_bigquery_dataset.stationary.dataset_id
+output "dev_pocdataset_dataset_id" {
+  description = "The ID of the dataset"
+  value       = google_bigquery_dataset.dev_pocdataset.dataset_id
 }
 
 # notebook table
