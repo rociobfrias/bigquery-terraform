@@ -2,7 +2,6 @@ provider "google" {
   region      = "europe-west1"
   zone        = "EU"
   project     = "pocdatacapgemini"
-  deletion_protection         = false
 }
 
 #Deploy stationary shop dataset
