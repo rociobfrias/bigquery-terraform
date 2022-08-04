@@ -10,11 +10,6 @@ pipeline {
         GOOGLE_CLOUD_KEYFILE_JSON = credentials('pocdatacap')
     }
     stages {
-        stage('Git checkout') {
-           steps{
-                git branch: 'main', credentialsId: 'Github', url: 'https://github.com/rociobfrias/bigquery-terraform'
-            }
-        }
         stage('terraform format check') {
             steps{
                 sh 'terraform fmt'
