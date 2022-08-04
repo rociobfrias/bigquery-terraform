@@ -4,11 +4,10 @@ provider "google" {
   project     = "pocdatacapgemini"
 }
 
-#Deploy stationary shop dataset
-resource "google_bigquery_dataset" "stationary" {
-  dataset_id                  = var.stationary
-  friendly_name               = "stationary"
-  description                 = "Stationary Shop dataset"
+#Deploy dev_pocdataset dataset
+resource "google_bigquery_dataset" "dev_pocdataset" {
+  dataset_id                  = var.dev_pocdataset
+  friendly_name               = "dev_pocdataset"
   location                    = var.dev_pocdataset_DS_location #check the location
  
   #default_table_expiration_ms = 3600000
