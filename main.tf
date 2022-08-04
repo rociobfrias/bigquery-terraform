@@ -27,7 +27,22 @@ resource "google_bigquery_table" "tbl_notebook" {
   time_partitioning {
     type = "DAY"
   }
-  //schema = file()
+  schema = <<EOF
+[
+  {
+    "name": "permalink",
+    "type": "STRING",
+    "mode": "NULLABLE",
+    "description": "The Permalink"
+  },
+  {
+    "name": "state",
+    "type": "STRING",
+    "mode": "NULLABLE",
+    "description": "State where the head office is located"
+  }
+]
+EOF
 }
 
 # pen table
@@ -38,7 +53,22 @@ resource "google_bigquery_table" "tbl_pen" {
   time_partitioning {
     type = "DAY"
   }
-  //schema = file()
+  schema = <<EOF
+[
+  {
+    "name": "permalink",
+    "type": "STRING",
+    "mode": "NULLABLE",
+    "description": "The Permalink"
+  },
+  {
+    "name": "state",
+    "type": "STRING",
+    "mode": "NULLABLE",
+    "description": "State where the head office is located"
+  }
+]
+EOF
 }
 
 
