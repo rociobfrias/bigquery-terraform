@@ -329,7 +329,7 @@ resource "google_bigquery_table" "transactions_train" {
 [
   {
     "name": "t_dat",
-    "type": DATE",
+    "type": "DATE",
     "mode": "NULLABLE"
   },
   {
