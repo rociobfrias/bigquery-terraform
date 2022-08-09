@@ -26,7 +26,7 @@ resource "google_bigquery_table" "US_postal_code" {
   dataset_id = google_bigquery_dataset.dev_pocdataset.dataset_id
   table_id = var.US_postal_code
   deletion_protection = var.protection
-
+    
   time_partitioning {
     type = "DAY"
   }
@@ -36,6 +36,7 @@ resource "google_bigquery_table" "US_postal_code" {
     "name": "zip",
     "type": "STRING",
     "mode": "NULLABLE"
+    "comment" : "Test"
   },
   {
     "name": "lat",
