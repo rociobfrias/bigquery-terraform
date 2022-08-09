@@ -16,7 +16,7 @@ resource "google_bigquery_dataset" "dev_pocdataset" {
 
 access {
     role          = "OWNER"
-    user_by_email = google_service_account.rocio.burgueno-frias@capgemini.com
+    user_by_email = google_service_account.bqowner.rocio.burgueno-frias@capgemini.com
   }
 
 output "dev_pocdataset_dataset_id" {
