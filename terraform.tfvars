@@ -1,5 +1,9 @@
-tbl_notebook = "tbl_notebooks"
-tbl_pen = "tbl_pen"
+dev_pocdataset = "dev_pocdataset"
+dev_pocdataset_DS_location = "europe-west1"
 
-stationary = "ds_stationary"
-stationary_DS_location = "EU"
+US_postal_code = "US_postal_code"
+articles = "articles"
+customers = "customers"
+transactions_train = "transactions_train"
+zip_code = "zip_code"
+protection = "false"
