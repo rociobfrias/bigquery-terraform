@@ -9,7 +9,6 @@ resource "google_bigquery_dataset" "dev_pocdataset" {
   dataset_id                  = var.dev_pocdataset
   friendly_name               = "dev_pocdataset"
   location                    = var.dev_pocdataset_DS_location #check the location
-  deletion_protection         = false
   #default_table_expiration_ms = 3600000
 
 }
@@ -17,6 +16,7 @@ resource "google_bigquery_dataset" "dev_pocdataset" {
 output "dev_pocdataset_dataset_id" {
   description = "The ID of the dataset"
   value       = google_bigquery_dataset.dev_pocdataset.dataset_id
+  deletion_protection = false
 }
 
 # US_postal_code table
