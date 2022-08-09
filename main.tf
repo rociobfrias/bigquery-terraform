@@ -35,7 +35,8 @@ resource "google_bigquery_table" "US_postal_code" {
   {
     "name": "zip",
     "type": "INTEGER",
-    "mode": "NULLABLE"
+    "mode": "NULLABLE",
+    "Description": "Campo ZIP tipo Integer"
   },
   {
     "name": "lat",
