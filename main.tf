@@ -16,7 +16,7 @@ resource "google_bigquery_dataset" "dev_pocdataset" {
 output "dev_pocdataset_dataset_id" {
   description = "The ID of the dataset"
   value       = google_bigquery_dataset.dev_pocdataset.dataset_id
-  deletion_protection = false
+
 }
 
 # US_postal_code table
