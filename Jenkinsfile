@@ -12,19 +12,20 @@ pipeline {
     stages {
         stage('terraform format check') {
             steps{
-                sh 'terraform fmt'
+                sh 'terraform maintIAM.tf fmt'
             }
         }
         stage('terraform Init') {
             steps{
-                sh 'terraform init'
+                sh 'terraform maintIAM.tf init'
             }
         }
         
         stage('terraform destroy') {
             steps{
 
-                sh ' terraform destroy --auto-approve'
+               // sh ' terraform destroy --auto-approve' 
+                println "Comentado"
             }
         }
         stage('terraform apply') {
