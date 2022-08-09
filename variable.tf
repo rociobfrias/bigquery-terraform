@@ -2,7 +2,7 @@ variable "dev_pocdatatest" {
 
 }
 
-variable "dev_pocdataset_DS_location" {
+variable "dev_pocdatatest_DS_location" {
 
 }
 
