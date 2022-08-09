@@ -31,7 +31,7 @@ resource "google_bigquery_table" "US_postal_code" {
 [
   {
     "name": "zip",
-    "type": "INTEGER",
+    "type": "STRING",
     "mode": "NULLABLE"
   },
   {
