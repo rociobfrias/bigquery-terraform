@@ -24,7 +24,8 @@ output "dev_pocdataset_dataset_id" {
 # US_postal_code table
 resource "google_bigquery_table" "US_postal_code" {
   dataset_id = google_bigquery_dataset.dev_pocdataset.dataset_id
-  table_id = var.US_postal_code    
+  table_id = var.US_postal_code
+  deletion_protection = "false"
 
   time_partitioning {
     type = "DAY"
@@ -135,6 +136,7 @@ EOF
 resource "google_bigquery_table" "articles" {
   dataset_id = google_bigquery_dataset.dev_pocdataset.dataset_id
   table_id = var.articles
+  deletion_protection = false
   
   time_partitioning {
     type = "DAY"
