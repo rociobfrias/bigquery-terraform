@@ -9,9 +9,15 @@ resource "google_bigquery_dataset" "dev_pocdataset" {
   dataset_id                  = var.dev_pocdataset
   friendly_name               = "dev_pocdataset"
   location                    = var.dev_pocdataset_DS_location #check the location
+  delete_contents_on_destroy  = true
   #default_table_expiration_ms = 3600000
-
+    
 }
+
+access {
+    role          = "OWNER"
+    user_by_email = google_service_account.rocio.burgueno-frias@capgemini.com
+  }
 
 output "dev_pocdataset_dataset_id" {
   description = "The ID of the dataset"
