@@ -26,4 +26,6 @@ variable "zip_code" {
 
 }
 
+variable "protection" {
 
+}
