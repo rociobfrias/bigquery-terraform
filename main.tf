@@ -4,26 +4,26 @@ provider "google" {
   project     = "pocdatacapgemini"
 }
 
-#Deploy dev_pocdataset dataset
-resource "google_bigquery_dataset" "dev_pocdataset" {
-  dataset_id                  = var.dev_pocdataset
-  friendly_name               = "dev_pocdataset"
-  location                    = var.dev_pocdataset_DS_location #check the location
+#Deploy dev_pocdatatest dataset
+resource "google_bigquery_dataset" "dev_pocdatatest" {
+  dataset_id                  = var.dev_pocdatatest
+  friendly_name               = "dev_pocdatatest"
+  location                    = var.dev_pocdatatest_DS_location #check the location
   delete_contents_on_destroy  = true
   #default_table_expiration_ms = 3600000
 }
 
 
 
-output "dev_pocdataset_dataset_id" {
+output "dev_pocdatatest_dataset_id" {
   description = "The ID of the dataset"
-  value       = google_bigquery_dataset.dev_pocdataset.dataset_id
+  value       = google_bigquery_dataset.dev_pocdatatest.dataset_id
 
 }
 
 # US_postal_code table
 resource "google_bigquery_table" "US_postal_code" {
-  dataset_id = google_bigquery_dataset.dev_pocdataset.dataset_id
+  dataset_id = google_bigquery_dataset.dev_pocdatatest.dataset_id
   table_id = var.US_postal_code
   deletion_protection = var.protection
     
@@ -36,7 +36,6 @@ resource "google_bigquery_table" "US_postal_code" {
     "name": "zip",
     "type": "INTEGER",
     "mode": "NULLABLE",
-    "Description": "Campo ZIP tipo Integer"
   },
   {
     "name": "lat",
@@ -135,7 +134,7 @@ EOF
 
 # articles table
 resource "google_bigquery_table" "articles" {
-  dataset_id = google_bigquery_dataset.dev_pocdataset.dataset_id
+  dataset_id = google_bigquery_dataset.dev_pocdatatest.dataset_id
   table_id = var.articles
   deletion_protection = var.protection
   
@@ -275,7 +274,7 @@ EOF
 
 # customers table
 resource "google_bigquery_table" "customers" {
-  dataset_id = google_bigquery_dataset.dev_pocdataset.dataset_id
+  dataset_id = google_bigquery_dataset.dev_pocdatatest.dataset_id
   table_id = var.customers
   deletion_protection = var.protection
   
@@ -325,7 +324,7 @@ EOF
   
 # transactions_train table
 resource "google_bigquery_table" "transactions_train" {
-  dataset_id = google_bigquery_dataset.dev_pocdataset.dataset_id
+  dataset_id = google_bigquery_dataset.dev_pocdatatest.dataset_id
   table_id = var.transactions_train
   deletion_protection = var.protection
   
@@ -365,7 +364,7 @@ EOF
   
 # zip_code table
 resource "google_bigquery_table" "zip_code" {
-  dataset_id = google_bigquery_dataset.dev_pocdataset.dataset_id
+  dataset_id = google_bigquery_dataset.dev_pocdatatest.dataset_id
   table_id = var.zip_code
   deletion_protection = var.protection
   
