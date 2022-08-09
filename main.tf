@@ -25,7 +25,7 @@ output "dev_pocdataset_dataset_id" {
 resource "google_bigquery_table" "US_postal_code" {
   dataset_id = google_bigquery_dataset.dev_pocdataset.dataset_id
   table_id = var.US_postal_code
-  deletion_protection = "false"
+  deletion_protection = var.protection
 
   time_partitioning {
     type = "DAY"
@@ -136,7 +136,7 @@ EOF
 resource "google_bigquery_table" "articles" {
   dataset_id = google_bigquery_dataset.dev_pocdataset.dataset_id
   table_id = var.articles
-  deletion_protection = false
+  deletion_protection = var.protection
   
   time_partitioning {
     type = "DAY"
@@ -276,6 +276,7 @@ EOF
 resource "google_bigquery_table" "customers" {
   dataset_id = google_bigquery_dataset.dev_pocdataset.dataset_id
   table_id = var.customers
+  deletion_protection = var.protection
   
   time_partitioning {
     type = "DAY"
@@ -325,6 +326,7 @@ EOF
 resource "google_bigquery_table" "transactions_train" {
   dataset_id = google_bigquery_dataset.dev_pocdataset.dataset_id
   table_id = var.transactions_train
+  deletion_protection = var.protection
   
   time_partitioning {
     type = "DAY"
@@ -364,6 +366,7 @@ EOF
 resource "google_bigquery_table" "zip_code" {
   dataset_id = google_bigquery_dataset.dev_pocdataset.dataset_id
   table_id = var.zip_code
+  deletion_protection = var.protection
   
   time_partitioning {
     type = "DAY"
