@@ -1,4 +1,4 @@
-variable "pocdatatest" {
+variable "dev_pocdatatest" {
 
 }
 
