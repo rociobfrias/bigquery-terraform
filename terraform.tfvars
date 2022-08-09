@@ -1,5 +1,5 @@
-dev_pocdataset = "dev_pocdatatest"
-dev_pocdataset_DS_location = "europe-west1"
+dev_pocdatatest = "dev_pocdatatest"
+dev_pocdatatest_DS_location = "europe-west1"
 
 US_postal_code = "US_postal_code"
 articles = "articles"
