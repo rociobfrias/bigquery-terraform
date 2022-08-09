@@ -16,7 +16,17 @@ resource "google_bigquery_dataset" "dev_pocdataset" {
     role          = "OWNER"
     user_by_email = google_service_account.bqowner.rocio.burgueno-frias@capgemini.com
   }
+  
+  access {
+    role   = "READER"
+    domain = "hashicorp.com"
+  }
 }
+
+resource "google_service_account" "bqowner" {
+  account_id = "bqowner"
+}
+
 
 
 
