@@ -35,7 +35,7 @@ resource "google_bigquery_table" "US_postal_code" {
   {
     "name": "zip",
     "type": "STRING",
-    "mode": "NULLABLE"
+    "mode": "NULLABLE",
     "description" : "Test para confirmar update"
   },
   {
