@@ -25,6 +25,7 @@ pipeline {
             steps{
 
                    //sh ' terraform destroy --auto-approve'
+                println "Comentada"
             }
         }
         stage('terraform apply') {
